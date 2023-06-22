@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="fitGeniusDomain">
+                <display-name xml:lang="x-default">Fit Genius Domain</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="sizeRightWidget">
+                <display-name xml:lang="x-default">Size Right Widget</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="fitGeniusWidgets">
+                <display-name xml:lang="x-default">Fit Genius Widgets</display-name>
+                <attribute attribute-id="fitGeniusScoreCategories"/>
+                <attribute attribute-id="fitGeniusFootScore"/>
+                <attribute attribute-id="fitGeniusProfile"/>
+                <attribute attribute-id="fitGeniusFootProfile"/>
+                <attribute attribute-id="fitGeniusDomain"/>
+                <attribute attribute-id="widgetButtonColor"/>
+                <attribute attribute-id="widgetFontColor"/>
+                <attribute attribute-id="sizeRightWidget"/>
+                <attribute attribute-id="integrationMode"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>
