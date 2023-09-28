@@ -17,6 +17,77 @@
                 <externally-managed-flag>false</externally-managed-flag>
                 <default-value>false</default-value>
             </attribute-definition>
+            <attribute-definition attribute-id="sizerightCategories">
+                <display-name xml:lang="x-default">Size Right Categories</display-name>
+                <description xml:lang="x-default">Used to define the categories on which the size widget will be displayed</description>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="sizeRight_font_family">
+                <display-name xml:lang="x-default">sizeright font family</display-name>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Auto</display>
+                        <value>auto</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Cursive</display>
+                        <value>cursive</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Emoji</display>
+                        <value>emoji</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Fangsong</display>
+                        <value>fangsong</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Fantasy</display>
+                        <value>fantasy</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Inherit</display>
+                        <value>inherit</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Math</display>
+                        <value>math</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Monospace</display>
+                        <value>monospace</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Revert</display>
+                        <value>revert</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Sans-Serif</display>
+                        <value>sans-serif</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Serif</display>
+                        <value>serif</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Ssystem-Ui</display>
+                        <value>system-ui</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">UI-Monospace</display>
+                        <value>ui-monospace</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Unset</display>
+                        <value>unset</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
         </custom-attribute-definitions>
         <group-definitions>
             <attribute-group group-id="fitGeniusWidgets">
@@ -28,8 +99,13 @@
                 <attribute attribute-id="fitGeniusDomain"/>
                 <attribute attribute-id="widgetButtonColor"/>
                 <attribute attribute-id="widgetFontColor"/>
-                <attribute attribute-id="sizeRightWidget"/>
                 <attribute attribute-id="integrationMode"/>
+            </attribute-group>
+            <attribute-group group-id="sizerightwidget">
+                <display-name xml:lang="x-default">Size Right Widget</display-name>
+                <attribute attribute-id="sizeRightWidget"/>
+                <attribute attribute-id="sizerightCategories"/>
+                <attribute attribute-id="sizeRight_font_family"/>
             </attribute-group>
         </group-definitions>
     </type-extension>

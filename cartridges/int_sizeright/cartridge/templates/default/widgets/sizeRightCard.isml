@@ -1,10 +1,21 @@
 <isscript>
         var assets = require('*/cartridge/scripts/assets');
         assets.addCss('/css/widgets.css');
-        assets.addJs('/js/sizeRightWidget.js');
+        assets.addCss('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/styles.css');
+        assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/sizeright_widget.js');
+        assets.addJs('/js/sizeRightCustomEvent.js');
+        assets.addJs('/js/dispatcher.js');
 </isscript>
 
-<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('sizeRightWidget')}">
+
+<size-right class="d-sm-none abc" session_id=${pdict.userSessionId}
+domain=${pdict.sizeRightDomain} gender=${pdict.gender} user='null'
+sku=${pdict.productSku}></size-right>
+
+<isinclude template="/sizeRightTest" sf-toolkit="on" />
+
+
+<iscomment> <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('sizeRightWidget')}">
     <div class=" d-sm-none mb-3" style="font-family:${dw.system.Site.getCurrent().getCustomPreferenceValue('sizeRight_font_family')}">
         <div class="d-flex flex-container contanareClass">
             <div class="image ImageClassDic"><img
@@ -98,4 +109,4 @@
     </div>
     </div>
     </div>
-</isif>
+</isif> </iscomment>

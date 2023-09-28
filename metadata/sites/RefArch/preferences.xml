@@ -5,6 +5,9 @@
         <development>
             <preference preference-id="fitGeniusDomain">aetrex.com</preference>
             <preference preference-id="sizeRightWidget">true</preference>
+            <preference preference-id="sizerightCategories">
+                <value>womens-accessories-shoes</value>
+            </preference>
         </development>  
         <staging/>
         <production/>

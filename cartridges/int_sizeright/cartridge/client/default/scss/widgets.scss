@@ -1,4 +1,7 @@
 @import "abstracts/variable";
+body{
+  overflow: auto !important;
+}
 .size-right-btn{
     margin-top: 2.5rem;
     background:$lite-red 0% 0% no-repeat padding-box;
