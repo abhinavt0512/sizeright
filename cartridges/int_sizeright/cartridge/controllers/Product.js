@@ -20,7 +20,14 @@ server.prepend('Show', function (req, res, next) {
     var sizeRightDomain = Site.getCurrent().getCustomPreferenceValue("fitGeniusDomain");
     var sizeRightCategories = Site.getCurrent().getCustomPreferenceValue("sizerightCategories");
     var userSessionId = req.session.raw.custom.sizeRightSessionId ? req.session.raw.custom.sizeRightSessionId : req.session.raw.custom.sizeRightSessionId = Math.random().toString(36).substr(2);
-    var gender = 'female';
+    var product = ProductMgr.getProduct(req.querystring.pid);
+    var gender;
+    var productSku;
+    if (product) {
+        gender = product.custom.sizeRightGender ? product.custom.sizeRightGender.value : 'female';
+        productSku = product.ID;
+    }
+
     var sessionData = {session_id: userSessionId,gender:"female",sku:req.querystring.pid};
     var serviceResponse = checkSessionIdService.sendSessionInfo.call(JSON.stringify(sessionData));
     var status = serviceResponse.status == "OK" ? true : false;
@@ -31,7 +38,6 @@ server.prepend('Show', function (req, res, next) {
     var shoeSize = gender == 'male' ? serviceResponse.object.malesize : serviceResponse.object.femalesize;
     var showScoreFlag = false;
 
-    var product = ProductMgr.getProduct(req.querystring.pid);
 
     if (product) {
 
@@ -57,7 +63,8 @@ server.prepend('Show', function (req, res, next) {
         sizeRightDomain:sizeRightDomain,
         serviceResponse:serviceResponse,
         shoeSize:shoeSize,
-        showScoreFlag:showScoreFlag
+        showScoreFlag:showScoreFlag,
+        productSku: productSku
     });
 
 
