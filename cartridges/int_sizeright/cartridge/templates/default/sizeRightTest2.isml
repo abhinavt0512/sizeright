@@ -9,6 +9,6 @@
   <size-right-web></size-right-web>
 <script src="${URLUtils.httpStatic('/js/runtime.js')}" defer></script>
 <script src="${URLUtils.httpStatic('/js/polyfills.js')}" defer></script>
-<script src="${URLUtils.httpStatic('/js/main.js')}" defer></script>
+<script src="${URLUtils.httpStatic('/js/sizeRightMain.js')}" defer></script>
 
 </body></html>
