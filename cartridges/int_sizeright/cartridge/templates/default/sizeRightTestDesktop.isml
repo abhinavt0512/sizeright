@@ -6,7 +6,7 @@
     assets.addJs('/js/sizeRightMain.js');
 </isscript>
 
-<div class="desktop-diana d-flex justify-content-center">
+<div class="desktop-diana d-none d-md-flex justify-content-center">
         <size-right-web class="" sessionid=${pdict.userSessionId}
     domain=${pdict.sizeRightDomain} gender=${pdict.gender} user='null'
     sku=${pdict.productSku}></size-right-web>

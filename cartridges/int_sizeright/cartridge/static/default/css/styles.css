@@ -2918,3 +2918,6 @@ th.mat-header-cell {
 .mat-spinner circle {
   stroke: #21aaba;
 }
+.mat-dialog-container {
+  padding: 0 !important;
+}

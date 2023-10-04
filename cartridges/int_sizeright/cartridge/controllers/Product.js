@@ -24,10 +24,12 @@ server.prepend('Show', function (req, res, next) {
     var userSessionId = req.session.raw.custom.sizeRightSessionId ? req.session.raw.custom.sizeRightSessionId : req.session.raw.custom.sizeRightSessionId = digest.digest(Math.random().toString(36).substr(2)).substr(0,30);
     var product = ProductMgr.getProduct(req.querystring.pid);
     const deviceType = (session.custom.device || 'WEB') === 'WEB' ? 'desktop' : 'mobile';
+    var sizeRightEnabled;
     var gender;
     var productSku;
-    if (product) {
-        gender = product.custom.sizeRightGender ? product.custom.sizeRightGender.value : 'female';
+    if (product && product.primaryCategory) {
+        gender = product.primaryCategory.custom.sizeRightGender ? product.primaryCategory.custom.sizeRightGender.value : 'Female';
+        sizeRightEnabled = product.primaryCategory.custom.sizeRightEnabled;
         productSku = product.ID;
     }
 
@@ -68,7 +70,8 @@ server.prepend('Show', function (req, res, next) {
         shoeSize:shoeSize,
         showScoreFlag:showScoreFlag,
         productSku: productSku,
-        deviceType: deviceType
+        deviceType: deviceType,
+        sizeRightEnabled: sizeRightEnabled
     });
 
 

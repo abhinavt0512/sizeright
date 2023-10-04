@@ -4,7 +4,6 @@
         var assets = require('*/cartridge/scripts/assets');
         assets.addJs('/js/productDetail.js');
         assets.addCss('/css/product/detail.css');
-        assets.addCss('/css/tagClassCss.css');
         assets.addCss('/scss/widgets.css');
     </isscript>
 
@@ -125,10 +124,12 @@
                             <isinclude template="product/components/socialIcons" />
                         </div>
                     </div>
-                    <isinclude template="widgets/sizeRightCard" />
-                    
+                    <isif condition="${pdict.sizeRightEnabled}">
+                        <isinclude template="widgets/sizeRightCard" />
+                    <iselse/>
+                        <iscomment> comment </iscomment>
+                    </isif>
                 </div>
-                
             </div>
 
             <div>
