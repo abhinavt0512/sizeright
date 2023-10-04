@@ -1,0 +1,13 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addCss('/css/styles.css');
+    assets.addJs('/js/sizeRightRuntime.js');
+    assets.addJs('/js/sizeRightPolyfills.js');
+    assets.addJs('/js/sizeRightMain.js');
+</isscript>
+
+<div class="desktop-diana d-flex justify-content-center">
+        <size-right-web class="" sessionid=${pdict.userSessionId}
+    domain=${pdict.sizeRightDomain} gender=${pdict.gender} user='null'
+    sku=${pdict.productSku}></size-right-web>
+</div>

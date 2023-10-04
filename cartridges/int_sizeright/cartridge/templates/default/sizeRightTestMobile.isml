@@ -1,0 +1,13 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addCss('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/styles.css');
+        assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/sizeright_widget.js');
+</isscript>
+
+<div class="mobile-diana d-flex justify-content-center">
+        <iscomment> MobileWidget1 </iscomment>
+        <size-right class="d-sm-none abc" session_id=${pdict.userSessionId}
+    domain=${pdict.sizeRightDomain} gender=${pdict.gender} user='null'
+    sku=${pdict.productSku}></size-right>
+</div>
+

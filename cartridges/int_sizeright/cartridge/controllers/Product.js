@@ -23,6 +23,7 @@ server.prepend('Show', function (req, res, next) {
     var digest = new MessageDigest(MessageDigest.DIGEST_SHA_256);
     var userSessionId = req.session.raw.custom.sizeRightSessionId ? req.session.raw.custom.sizeRightSessionId : req.session.raw.custom.sizeRightSessionId = digest.digest(Math.random().toString(36).substr(2)).substr(0,30);
     var product = ProductMgr.getProduct(req.querystring.pid);
+    const deviceType = (session.custom.device || 'WEB') === 'WEB' ? 'desktop' : 'mobile';
     var gender;
     var productSku;
     if (product) {
@@ -66,7 +67,8 @@ server.prepend('Show', function (req, res, next) {
         serviceResponse:serviceResponse,
         shoeSize:shoeSize,
         showScoreFlag:showScoreFlag,
-        productSku: productSku
+        productSku: productSku,
+        deviceType: deviceType
     });
 
 

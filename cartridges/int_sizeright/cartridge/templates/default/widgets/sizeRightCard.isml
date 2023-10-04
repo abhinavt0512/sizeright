@@ -1,112 +1,12 @@
 <isscript>
         var assets = require('*/cartridge/scripts/assets');
         assets.addCss('/css/widgets.css');
-        assets.addCss('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/styles.css');
-        assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/sizeright_widget.js');
-        assets.addJs('/js/sizeRightCustomEvent.js');
-        assets.addJs('/js/dispatcher.js');
+        //assets.addJs('/js/sizeRightCustomEvent.js');
+        //assets.addJs('/js/dispatcher.js');
 </isscript>
 
-
-<size-right class="d-sm-none abc" session_id=${pdict.userSessionId}
-domain=${pdict.sizeRightDomain} gender=${pdict.gender} user='null'
-sku=${pdict.productSku}></size-right>
-
-<isinclude template="/sizeRightTest" sf-toolkit="on" />
-
-
-<iscomment> <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('sizeRightWidget')}">
-    <div class=" d-sm-none mb-3" style="font-family:${dw.system.Site.getCurrent().getCustomPreferenceValue('sizeRight_font_family')}">
-        <div class="d-flex flex-container contanareClass">
-            <div class="image ImageClassDic"><img
-                    src="https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/assets/images/latest_design/SizeRight_logo_118px.png"
-                    height="20px" width="21px" class="sizeRightlogo ImageClass" role="presentation" data-uw-rm-ima="un">
-            </div>
-            <input id="productId" type="hidden" name="ProductId" value="${product.id}">
-            <input id="userSessionId" type="hidden" name="userSessionId" value="${pdict.userSessionId}">
-            <input id="gender" type="hidden" name="gender" value="${pdict.gender}">
-            <div class="blue-remover mr-1 ImageClassDic">
-
-                <div class="m-2 small sizerighttext hederText" id="textContant">
-                    <isif condition="${pdict.serviceResponse != null}">
-                        <isif
-                            condition="${pdict.serviceResponse.object.user_exists == 'YES' && pdict.serviceResponse.object.style_name != 'NA'}">
-                            <div>
-                                <div class="Header subText"> <u id="medianShowSize">Your
-                                        ${pdict.serviceResponse.object.style_name} Size is ${pdict.shoeSize}</u></div>
-                                <div class="subHeader "> <u id="Measurements">(Your Measurements)</u></div>
-                            </div>
-                            <img class="myButton" src="https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/assets/images/reload.png" width="15" height="15" style="margin: 6px;">
-                        </isif>
-                        <isif
-                            condition="${pdict.serviceResponse.object.user_exists == 'YES' && pdict.serviceResponse.object.style_name == 'NA'}">
-                            <div>
-                                <div class="Header subText"> <u id="medianShowSize">Your Median Size is
-                                        ${pdict.shoeSize}</u></div>
-                                <div class="subHeader "> <u id="Measurements">(Your Measurements)</u></div>
-                            </div>
-                            <img class="myButton" src="https://aetrex-fit-genius-widgets.s3.amazonaws.com/size-right/assets/images/reload.png" width="15" height="15" style="margin: 6px;">
-                        </isif>
-                        <isif
-                            condition="${pdict.serviceResponse.object.user_exists != 'YES' && pdict.serviceResponse.object.style_name != 'NA'}">
-                            <div>
-                                <div class="Header subText"> <u class="myButton">What is my
-                                        ${pdict.serviceResponse.object.style_name} Size?</u></div>
-                                <div class="subHeader "> <u class="myButton ml-1">(measure your feet)</u></div>
-                            </div>
-                        </isif>
-                        <isif
-                            condition="${pdict.serviceResponse.object.user_exists != 'YES' && pdict.serviceResponse.object.style_name == 'NA'}">
-                            <div>
-                                <div class="Header subText"> <u class="myButton">What is my Shoe Size?</u></div>
-                                <div class="subHeader "> <u class="myButton ml-1">(measure your feet)</u></div>
-                            </div>
-                        </isif>
-                    <iselse/>
-                        <div>
-                            <div class="Header subText"> <u class="myButton">What is my Shoe Size?</u></div>
-                            <div class="subHeader "> <u class="myButton ml-1">(measure your feet)</u></div>
-                        </div>
-                    </isif>
-
-                </div>
-
-
-
-            </div>
-        </div>
-        <div id="myModal" class="modal">
-        <div class="modal-content1">
-          <span class="close">&times;</span>
-        <div class=FirstModalHead>Mediam  ${pdict.serviceResponse.object.style_name} Size</div>
-        <p style="text-align: justify; margin-top: 5%;">As you may know, some shoes run small, some shoes run big, while others run what we consider to be true to size.</p>
-        <p style="text-align: justify; margin-top: 5%">Your Median  ${pdict.serviceResponse.object.style_name} Size is an indicatore of what likely is the most common  ${pdict.serviceResponse.object.style_name} size in your closet.</p>
-      </div>
-
-    </div>
-    <div id="myModal1" class="modal">
-      <div class="modal-content2">
-        <span class="close1">&times;</span>
-        <div class=FirstModalHead>Measurements</div>
-        <h1 class="text-center" style="margin-top: 6%;">Length</h1>
-        <div style="display: flex;" class="row">
-          <div class="col">Left Foot</div>
-          <div class="col">: ${Number(pdict.serviceResponse.object.lf_length).toFixed(2)} cm</div>
-        </div>
-        <div style="display: flex;" class="row">
-          <div class="col" style="padding-inline-start: 12px;">Right Foot</div>
-          <div class="col">: ${Number(pdict.serviceResponse.object.rf_length)} cm</div>
-    </div>
-        <h1 class="text-center" style="margin-top: 6%;">width</h1>
-        <div style="display: flex; " class="row">
-          <div class="col">Left Foot</div>
-          <div class="col">:${Number(pdict.serviceResponse.object.lf_width)} cm</div>
-      </div>
-      <div style="display: flex; " class="row">
-          <div class="col" style="padding-inline-start: 12px;">Right Foot</div>
-          <div class="col">: ${Number(pdict.serviceResponse.object.rf_width)} cm</div>
-    </div>
-    </div>
-    </div>
-    </div>
-</isif> </iscomment>
+<isif condition="${pdict.deviceType == 'mobile'}">
+        <isinclude template="sizeRightTestMobile" sf-toolkit="on" />
+<iselse/>
+        <isinclude template="sizeRightTestDesktop" sf-toolkit="on" />
+</isif>

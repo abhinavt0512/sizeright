@@ -3,21 +3,6 @@
   font-size: 12px;
   font-family: Roboto, Helvetica Neue, sans-serif;
 }
-
-div.qrcode {
-  margin-left: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-a.close {
-  margin-top: 1rem;
-  margin-right: 1rem;
-}
-
-.mat-dialog-content {
-  overflow: visible;
-}
-
 .mat-badge-small .mat-badge-content {
   font-size: 9px;
 }
@@ -1722,7 +1707,6 @@ th.mat-header-cell {
     0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
   background: #fff;
   color: rgba(0, 0, 0, 0.87);
-  overflow: visible;
 }
 .mat-divider {
   border-top-color: rgba(0, 0, 0, 0.12);
@@ -2929,4 +2913,8 @@ th.mat-header-cell {
 }
 .mat-simple-snackbar-action {
   color: #ff4081;
+}
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #21aaba;
 }
