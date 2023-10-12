@@ -127,7 +127,6 @@
                     <isif condition="${pdict.sizeRightEnabled}">
                         <isinclude template="widgets/sizeRightCard" />
                     <iselse/>
-                        <iscomment> comment </iscomment>
                     </isif>
                 </div>
             </div>

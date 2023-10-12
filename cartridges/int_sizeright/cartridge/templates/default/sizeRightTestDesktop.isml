@@ -1,9 +1,9 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets');
-    assets.addCss('/css/styles.css');
-    assets.addJs('/js/sizeRightRuntime.js');
-    assets.addJs('/js/sizeRightPolyfills.js');
-    assets.addJs('/js/sizeRightMain.js');
+    assets.addCss('https://aetrex-fit-genius-widgets.s3.amazonaws.com/sizeright-desktop-widget/styles.css');
+    assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/sizeright-desktop-widget/runtime.js');
+    assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/sizeright-desktop-widget/polyfills.js');
+    assets.addJs('https://aetrex-fit-genius-widgets.s3.amazonaws.com/sizeright-desktop-widget/main.js');
 </isscript>
 
 <div class="desktop-diana d-none d-md-flex justify-content-center">

@@ -1,8 +1,6 @@
 <isscript>
         var assets = require('*/cartridge/scripts/assets');
         assets.addCss('/css/widgets.css');
-        //assets.addJs('/js/sizeRightCustomEvent.js');
-        //assets.addJs('/js/dispatcher.js');
 </isscript>
 
 <isif condition="${pdict.deviceType == 'mobile'}">

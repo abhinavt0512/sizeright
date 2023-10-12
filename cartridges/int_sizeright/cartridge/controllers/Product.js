@@ -15,7 +15,7 @@ const MessageDigest = require('dw/crypto/MessageDigest');
  * @param {category} - sensitive
  */
 server.prepend('Show', function (req, res, next) {
-    const sizeRightDomain = Site.getCurrent().getCustomPreferenceValue("fitGeniusDomain");
+    const sizeRightDomain = req.host;
     const digest = new MessageDigest(MessageDigest.DIGEST_SHA_256);
     const userSessionId = req.session.raw.custom.sizeRightSessionId ? req.session.raw.custom.sizeRightSessionId : req.session.raw.custom.sizeRightSessionId = digest.digest(Math.random().toString(36).substr(2)).substr(0,30);
     var product = ProductMgr.getProduct(req.querystring.pid);
