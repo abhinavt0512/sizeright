@@ -11,11 +11,9 @@ var orderPixelTracking = LocalServiceRegistry.createService('int_fitgenius.pixel
         svc.addHeader('Content-Type', 'application/json');
         svc.setRequestMethod('POST');
         svc.setAuthentication('NONE');
-        param = JSON.stringify(param);
         return param;
     },
     parseResponse: function (svc, result) {
-        var c = 0;
         return result;
     },
     filterLogMessage: function (msg) {
