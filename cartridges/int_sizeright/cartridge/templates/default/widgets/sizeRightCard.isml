@@ -4,7 +4,7 @@
 </isscript>
 
 <isif condition="${pdict.deviceType == 'mobile'}">
-        <isinclude template="sizeRightTestMobile" sf-toolkit="on" />
+        <isinclude template="sizeRightMobile" sf-toolkit="on" />
 <iselse/>
-        <isinclude template="sizeRightTestDesktop" sf-toolkit="on" />
+        <isinclude template="sizeRightDesktop" sf-toolkit="on" />
 </isif>
